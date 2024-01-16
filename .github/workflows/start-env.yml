@@ -1,19 +1,17 @@
 name: Mon workflow avec des variables
 
 on : [push]
-
 env:
   VAR_01: fromwork flow
 
 jobs:
-  build:
+  build-workflow:
     env:
-      VAR_2: FROM JOBS
+      VAR_2: from jobs
     runs-on: ubuntu-latest
-    name: before steŝ
+    name: before steps
     steps:
       - name: steps start from here
-      - run: echo ""
         env:
           VAR_3: steps bariables
       - run: |
