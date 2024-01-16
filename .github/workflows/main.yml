@@ -9,5 +9,5 @@ jobs:
   creation:
     runs-on: ubuntu-latest
     steps:
-      - run: "Second Trail for workflow"
-      - run: " It workds like hell"
+      - run: echo "Second Trail for workflow"
+      - run: echo "I almost forgot the echo commande"
