@@ -19,4 +19,6 @@ jobs:
             echo VAR_3: $VAR_3
             echo VAR_4: $VAR_1
             echo SECRET: $SECRET_1 
+            echo GITHUB_REF: GITHUB_REF
+            echo GITHUB_JOB: GITHUB_JOB
       
