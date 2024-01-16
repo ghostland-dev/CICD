@@ -1,16 +1,13 @@
-# Nom de WorkFlow
-name: Mon Premier Work Flow
+# Nom de workflow
+name: Mon Prmier workflow
 
-# Evenements déclancheurs
+# Envenement declanachrs
 on: [push]
 
-# Liste des jobs de workflow
+# Nom de job
 jobs:
-  
-  #nom des jobs
-  firt-wrokflow:
-    #Dristirbution de runner
+  creation:
     runs-on: ubuntu-latest
-    #liste des étapes
     steps:
-      - run: echo "Bonjour tout le monde"
+      - run: "Second Trail for workflow"
+      - run: " It workds like hell"
