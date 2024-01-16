@@ -10,7 +10,7 @@ jobs:
   #nom des jobs
   firt-wrokflow:
     #Dristirbution de runner
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     #liste des étapes
     steps:
       - run: echo "Bonjour tout le monde"
