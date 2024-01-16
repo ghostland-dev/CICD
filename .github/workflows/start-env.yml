@@ -17,8 +17,8 @@ jobs:
             echo VAR_0: $VAR_0
             echo VAR_2: $VAR_2
             echo VAR_3: $VAR_3
-            echo VAR_4: $VAR_1
-            echo SECRET: $SECRET_1 
-            echo GITHUB_REF: GITHUB_REF
-            echo GITHUB_JOB: GITHUB_JOB
+            echo VAR_4: 
+            echo SECRET: ${{ secrets.SECRET_1 }}
+            echo GITHUB_REF: $GITHUB_REF
+            echo GITHUB_JOB: $GITHUB_JOB
       
