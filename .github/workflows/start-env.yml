@@ -2,7 +2,7 @@ name: Mon workflow avec des variables
 on : [push]
 
 env:
-  VAR_1: fromwork flow
+  VAR_0: fromwork flow
 
 jobs:
   build-workflow:
@@ -14,7 +14,9 @@ jobs:
         env:
           VAR_3: steps bariables
         run: |
-            echo VAR_1: $VAR_1
+            echo VAR_0: $VAR_0
             echo VAR_2: $VAR_2
             echo VAR_3: $VAR_3
+            echo VAR_4: $VAR_1
+            echo SECRET: $SECRET_1 
       
