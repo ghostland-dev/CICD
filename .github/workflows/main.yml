@@ -1,0 +1,16 @@
+# Nom de WorkFlow
+name: Mon Premier Work Flow
+
+# Evenements déclancheurs
+on: [push]
+
+# Liste des jobs de workflow
+jobs:
+  
+  #nom des jobs
+  firt-wrokflow:
+    #Dristirbution de runner
+    runs-on: ubunutu-latest
+    #liste des étapes
+    steps:
+      - run: echo "Bonjour tout le monde"
