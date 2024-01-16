@@ -9,7 +9,6 @@ jobs:
     env:
       VAR_2: from jobs
     runs-on: ubuntu-latest
-    name: before steps
     steps:
       - name: steps start from here
         env:
