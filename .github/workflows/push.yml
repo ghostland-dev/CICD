@@ -1,6 +1,6 @@
 name: Mon workflow avec des variables
 
-on: [push]
+on: push
 
 jobs:
   develop:
