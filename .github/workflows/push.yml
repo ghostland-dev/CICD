@@ -11,3 +11,16 @@ jobs:
         with:
           name: mon-artifact
           path: ./exemple.txt
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: mon-second
+          path: ./ici
+      - run: |
+          ls
+          echo ----------------------
+          ls ./ici
+          echo ----------------------
+          cat /.ici/exemple.txt
