@@ -9,4 +9,4 @@ jobs:
         os: ["ubuntu-latest","windows-latest","macos-latest"]
         verions: [12,13,14]
     steps:
-      - run: ${{ matrix.os }} - ${{ matrix.verions}}
+      - run: echo ${{ matrix.os }} - ${{ matrix.verions}}
