@@ -1,14 +1,18 @@
 name: On pull request
 
 on:
-    pull_request:
-        branches: 
-            - main
+    
+    issues: 
+        
+        types: 
+            opened
+    
 
+   
 jobs:
     request-pull:
         runs-on: ubuntu-latest
         steps:
             - id: Ruquesthandler
               run: |
-                echo "A pulls request was done by ${{ Github.actor }} "
+                echo " issue create by ${{ Github.actor }} "
