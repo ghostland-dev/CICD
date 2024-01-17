@@ -16,6 +16,5 @@ jobs:
           npm ci
           npm run lint
           npm run build
-          npm run dev
         working-directory: ./vite-project
 # Step 04
