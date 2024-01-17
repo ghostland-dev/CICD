@@ -8,6 +8,6 @@ jobs:
       - run: echo fruit=pomme >> $GITHUB_OUTPUT
         id: Step-1
       - run: echo ::error::fruit est égale à ${{ steps.Step-1.outputs.fruit }} devrait être 
-        if: ${{ steps.Step-1.outputs.fruit }} != "poire"
+        if: ${{ steps.Step-1.outputs.fruit }} != "pomme"
  
 
