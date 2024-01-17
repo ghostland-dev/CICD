@@ -2,12 +2,10 @@ name: Mon workflow avec des variables
 on: [push]
 
 jobs:
-  build:
+  exemple_mask:
     runs-on: ubuntu-latest
     steps:
-      - run: echo fruit=pomme >> $GITHUB_OUTPUT
-        id: Step-1
-      - run: echo ::error::fruit est égale à ${{ steps.Step-1.outputs.fruit }} devrait être 
-        if: ${{ steps.Step-1.outputs.fruit }} != "pomme"
- 
-
+      - name: Masquer une valeur
+        run: |
+          echo "::add-mask::mot_de_passe"
+          echo "mon mot_de_passe est mot_de_passe"  
