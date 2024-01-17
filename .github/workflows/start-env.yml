@@ -7,7 +7,14 @@ jobs:
     if: ${{ GITHUB.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "build in prod"
+      - id: step1
+        run: | 
+          echo $GITHUB_ENV
+          echo FROM_STEP_1=value_step_1 >> $GITHUB_ENV
+      - id: step2
+        run: |
+          echo $FROM_STEP_1
+          echo ${{ env.FROM_STEP_1 }}
     
   deploy:
     needs: [build]
