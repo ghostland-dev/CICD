@@ -3,7 +3,6 @@ on: [push]
 defaults:
   run:
     shell: bash
-    working-directory: ./vite-project
 
 
 jobs:
@@ -17,8 +16,15 @@ jobs:
       - name: Récuperer les données de répertoire
         uses: actions/checkout@v4
       # Step 03
+      - name: configure cache for the app
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package.lock.json') }}
+          path: ./vite-project/.npm
+      # Step 04
       - name: Installation de node modules et build de projet
         run: |
-          npm ci
+          npm ci --cache .npm
           npm run lint
           npm run build
+        working-directory: ./vite-project
