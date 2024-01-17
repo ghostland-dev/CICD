@@ -1,9 +1,11 @@
 name: Mon workflow avec des variables
 on :
   push:
-    branches: 
+    # branches: 
+    #   - main
+    #   - feature
+    branches-ignore: 
       - main
-      - feature
 
 
 jobs:
