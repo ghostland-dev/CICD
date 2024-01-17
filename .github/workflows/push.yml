@@ -1,15 +1,13 @@
 name: Mon workflow avec des variables
 on: [push]
 
+
 jobs:
-  build:
+  test-articat:
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis
-    container: 
-      image: node:18
     steps:
-      - run: apt update -y && apt install redis-tools -y
-      - run: redis-cli -h redis ping
-      
+      - run: echo "Hello world" >> exemple.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mon-artifact
+          path: ./exemple.txt
