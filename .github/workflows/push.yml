@@ -12,6 +12,7 @@ jobs:
     container: 
       image: node:18
     steps:
-      - run: sudo apt update -y && sudo apt install redis-tools -y
+      - run: apt install sudo
+      - run: apt update -y && sudo apt install redis-tools -y
       - run: redis-cli -h redis ping
       
