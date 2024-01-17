@@ -1,18 +1,18 @@
-name: On pull request
+# name: On pull request
 
-on:
+# on:
     
-    issues: 
+#     issues: 
         
-        types: 
-            opened
+#         types: 
+#             opened
     
 
    
-jobs:
-    request-pull:
-        runs-on: ubuntu-latest
-        steps:
-            - id: Ruquesthandler
-              run: |
-                echo " issue create by ${{ Github.actor }} "
+# jobs:
+#     request-pull:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - id: Ruquesthandler
+#               run: |
+#                 echo " issue create by ${{ Github.actor }} "

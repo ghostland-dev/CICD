@@ -1,19 +1,13 @@
 name: Mon workflow avec des variables
-on :
-  push:
-    # branches: 
-    #   - main
-    #   - feature
-    # branches-ignore: 
-    #   - main
-    paths:
-      - '**.jepg'
-
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Hello world"
- 
+          echo ::notice::un message d'information
+          echo ::warning::un alerte de danger
+          echo ::debug::un debug en cours
+          echo ::error::une erreur est survenue 
+
