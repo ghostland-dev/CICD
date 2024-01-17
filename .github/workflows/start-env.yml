@@ -3,10 +3,16 @@ on : [push]
 
 
 jobs:
+  build:
+    if: ${{ GITHUB.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build in prod"
+    
   deploy:
+    needs: [build]
     if: ${{ GITHUB.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "deploy in prod"
     
-
