@@ -7,7 +7,7 @@ on :
     # branches-ignore: 
     #   - main
     paths:
-      - '**.png'
+      - '**.jepg'
 
 
 jobs:
