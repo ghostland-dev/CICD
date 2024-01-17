@@ -24,4 +24,4 @@ jobs:
           echo ----------------------
           ls ./ici
           echo ----------------------
-          cat /.ici/exemple.txt
+          cat ./ici/exemple.txt
