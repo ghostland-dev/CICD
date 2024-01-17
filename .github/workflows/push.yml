@@ -1,5 +1,11 @@
 name: Mon workflow avec des variables
 on: [push]
+defaults:
+  run:
+    shell: bash
+    working-directory: ./vite-project
+
+
 jobs:
   develop:
     runs-on: ubuntu-latest
@@ -10,11 +16,9 @@ jobs:
       # Step 02
       - name: Récuperer les données de répertoire
         uses: actions/checkout@v4
-     # Step 03
+      # Step 03
       - name: Installation de node modules et build de projet
         run: |
           npm ci
           npm run lint
           npm run build
-        working-directory: ./vite-project
-# Step 04
