@@ -4,24 +4,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ["ubuntu-latest","windows-latest","macos-latest"]
+        verions: [12,13,14]
     steps:
-      # Step 01
-      - name: Installation des dépendances de projet
-        uses: actions/setup-node@v4
-      # Step 02
-      - name: Récuperer les données de répertoire
-        uses: actions/checkout@v4
-      # Step 03
-      - name: configure cache for the app 
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package-lock.json') }}
-          path: ./vite-project/.npm
-      - run: ls -la ./vite-project/.npm 
-      # Step 04
-      # - name: Installation de node modules et build de projet
-      #   run: |
-      #     npm ci --cache .npm --prefer-offline
-      #     npm run lint
-      #     npm run build
-      #   working-directory: ./vite-project
+      - run: ${{ matrix.os }} - ${{ matrix.verions}}
