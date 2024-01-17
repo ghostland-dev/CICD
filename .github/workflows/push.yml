@@ -6,12 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # os: ["ubuntu-latest","windows-latest","macos-latest"]
-        # verions: [12,13,14]
+        os: ["ubuntu-latest","windows-latest","macos-latest"]
+        verions: [12,13,14]
         include:
           - cloud: ovh
             endpoint: url1
+            os: ubuntu-latest
           - cloud: aws
             endpoint: url2
+            os: windows-latest
     steps:
       - run: echo ${{ matrix.cloud }} - ${{ matrix.endpoint}}
