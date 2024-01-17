@@ -3,25 +3,44 @@ on: [push]
 
 
 jobs:
-  test-articat:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello world" >> exemple.txt
-      - uses: actions/upload-artifact@v3
+      - name: CLonner les données
+        uses: actions/checkout@v4
+
+      - name: install nodejs
+        uses: actions/setup-node@v4
+
+      - name: Init cache
+        uses: actions/cache@v3
         with:
-          name: mon-artifact
-          path: ./exemple.txt
-  download:
-    needs: [test-articat]
+          key: ${{ runner.os }}-${{ hashFiles('./project-vite/package.lock.json') }}
+          path: ./vite-project/.npm
+
+      - name: Initialisation de projet
+        working-directory: ./vite-project
+        run: npm ci --cache ./.npm --prefer-offline
+      
+      - name: build l'application
+        run: npm run build
+
+      - name: Uplaoding artifacts 
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./vite-project/dist
+
+      
+
+  deploy:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: mon-artifact
-          path: ./ici
+          name: build
+          path: ./build
       - run: |
-          ls
-          echo ----------------------
-          ls ./ici
-          echo ----------------------
-          cat ./ici/exemple.txt
+           ls
+           ls ./build
