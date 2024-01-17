@@ -4,8 +4,10 @@ on :
     # branches: 
     #   - main
     #   - feature
-    branches-ignore: 
-      - main
+    # branches-ignore: 
+    #   - main
+    paths:
+      - '**.png'
 
 
 jobs:
