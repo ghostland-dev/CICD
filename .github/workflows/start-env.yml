@@ -21,4 +21,9 @@ jobs:
             echo SECRET: ${{ secrets.SECRET_1 }}
             echo GITHUB_REF: $GITHUB_REF
             echo GITHUB_JOB: $GITHUB_JOB
+---
+        run: |
+          echo ${{ contains("main","" }}
+        
+          
       
