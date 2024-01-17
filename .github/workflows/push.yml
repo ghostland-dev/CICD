@@ -1,21 +1,18 @@
 name: Mon workflow avec des variables
+
 on: [push]
 
 jobs:
   develop:
     runs-on: ubuntu-latest
     steps:
-
       # Step 01
       - name: Installation des dépendances de projet
         uses: actions@setup-node@v4
-        with:
-          node-version: 20
-          
       # Step 02
       - name: Récuperer les données de répertoire
         uses: actions/checkout@v4
-
+     # Step 03
       - name: Installation de node modules et build de projet
         run: |
           npm ci
