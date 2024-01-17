@@ -12,6 +12,6 @@ jobs:
           echo 123 > test.txt
           git config --global user.email "ismail.mouyahada@gmail.com"
           git config --global user.name "FROM CICD"
-          git add text.txt
+          git add test.txt
           git commit -m "test"
           git push origin main
