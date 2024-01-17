@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo ::notice::un message d'information
+          echo ::notice::un message d\'information
           echo ::warning::un alerte de danger
           echo ::debug::un debug en cours
           echo ::error::une erreur est survenue 
