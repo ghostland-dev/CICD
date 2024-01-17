@@ -1,0 +1,14 @@
+name: On pull request
+
+on:
+    pull_request:
+        branches: 
+            - main
+
+jobs:
+    request-pull:
+        runs-on: ubuntu-latest
+        steps:
+            - id: Ruquesthandler
+              run: |
+                echo "A pulls request was done by ${{ Github.actor }} "
