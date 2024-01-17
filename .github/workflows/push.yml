@@ -6,42 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: CLonner les données
-        uses: actions/checkout@v4
-
-      - name: install nodejs
-        uses: actions/setup-node@v3
-
-      - name: Init cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('./project-vite/package.lock.json') }}
-          path: ./vite-project/.npm
-
-      - name: Initialisation de projet
-        working-directory: ./vite-project
-        run: npm ci --cache ./.npm --prefer-offline
-        
-      - name: build  application
-        working-directory: ./vite-project
-        run: npm run build
-
-      - name: Uplaoding artifacts 
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: ./vite-project/dist
-
-      
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: ./build
-      - run: |
-           ls
-           ls ./build
+      - name: Premier étape de step
+        run: | 
+          echo $GITHUB_STEP_SUMMARY
+          echo "
+          # la résummée de ce work flow:
+            - dans cete rsumée 
+            - des choses se sont produits
+          " >> $GITHUB_STEP_SUMMARY
