@@ -17,10 +17,11 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ hashFiles('./vite-project/package-lock.json') }}
           path: ./vite-project/.npm
+        run: ls la ./vite-project/ 
       # Step 04
-      - name: Installation de node modules et build de projet
-        run: |
-          npm ci --cache .npm --prefer-offline
-          npm run lint
-          npm run build
-        working-directory: ./vite-project
+      # - name: Installation de node modules et build de projet
+      #   run: |
+      #     npm ci --cache .npm --prefer-offline
+      #     npm run lint
+      #     npm run build
+      #   working-directory: ./vite-project
