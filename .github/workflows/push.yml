@@ -5,7 +5,12 @@ jobs:
   exemple_mask:
     runs-on: ubuntu-latest
     steps:
-      - name: Masquer une valeur
+      - name: Shell "SH"
         run: |
-          pwd
-          echo $SHELL
+         pwd       
+        shell: sh
+      - name: Shell "Powershell"
+        run: |
+         pwd       
+        shell: pwh
+     
