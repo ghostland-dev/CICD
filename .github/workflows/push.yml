@@ -1,12 +1,8 @@
 name: Mon workflow avec des variables
 on: [push]
-defaults:
-  run:
-    shell: bash
-
 
 jobs:
-  develop:
+  build:
     runs-on: ubuntu-latest
     steps:
       # Step 01
@@ -19,7 +15,7 @@ jobs:
       - name: configure cache for the app 
         uses: actions/cache@v4
         with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package.lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package-lock.json') }}
           path: ./vite-project/.npm
       # Step 04
       - name: Installation de node modules et build de projet
