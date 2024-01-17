@@ -24,7 +24,7 @@ jobs:
       # Step 04
       - name: Installation de node modules et build de projet
         run: |
-          npm ci --cache .npm
+          npm ci --cache .npm --prefer-offline
           npm run lint
           npm run build
         working-directory: ./vite-project
