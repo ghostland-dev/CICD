@@ -12,5 +12,5 @@ jobs:
       - name: Shell "Powershell"
         run: |
          pwd       
-        shell: pwh
+        shell: pwsh
      
